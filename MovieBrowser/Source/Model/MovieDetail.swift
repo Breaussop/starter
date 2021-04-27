@@ -27,9 +27,10 @@ struct MovieListResult: Codable, Equatable {
     var original_language: String?
     var title: String?
     var backdrop_path: String?
+    var vote_average: Double?
     
     enum CodingKeys: String, CodingKey {
-        case poster_path, adult, overview, release_date, genre_ids, id, original_title, original_language, title, backdrop_path, popularity
+        case poster_path, adult, overview, release_date, genre_ids, id, original_title, original_language, title, backdrop_path, popularity, vote_average
         
     }
 }

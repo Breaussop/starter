@@ -24,9 +24,8 @@
                         <nil key="textColor"/>
                         <color key="highlightedColor" systemColor="secondaryLabelColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1E-OD-hF7">
-                        <rect key="frame" x="235" y="55" width="69" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1E-OD-hF7">
+                        <rect key="frame" x="255" y="0.0" width="49" height="150"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -45,11 +44,14 @@
                 <constraints>
                     <constraint firstItem="hnF-os-wbD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3g2-6C-VR1"/>
                     <constraint firstItem="hnF-os-wbD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3rt-v1-QeI"/>
+                    <constraint firstItem="h1E-OD-hF7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="48U-y6-3bV"/>
                     <constraint firstItem="1UK-J0-re4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7cT-Md-p1X"/>
+                    <constraint firstItem="h1E-OD-hF7" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ML7-vF-haw"/>
                     <constraint firstItem="1UK-J0-re4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="PSU-eD-QNo"/>
                     <constraint firstItem="hnF-os-wbD" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ZpG-cM-f1F"/>
                     <constraint firstItem="hnF-os-wbD" firstAttribute="top" secondItem="1UK-J0-re4" secondAttribute="bottom" constant="8" symbolic="YES" id="bNv-rf-qJE"/>
                     <constraint firstItem="hnF-os-wbD" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="jTJ-Pf-52x"/>
+                    <constraint firstAttribute="bottom" secondItem="h1E-OD-hF7" secondAttribute="bottom" id="qcX-IH-60k"/>
                     <constraint firstItem="hnF-os-wbD" firstAttribute="top" secondItem="1UK-J0-re4" secondAttribute="bottom" constant="8" symbolic="YES" id="toS-2L-Qhe"/>
                 </constraints>
             </tableViewCellContentView>

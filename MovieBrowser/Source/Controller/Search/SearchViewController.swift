@@ -20,8 +20,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.searchBar.delegate = self
-        
         self.navigationItem.titleView?.tintColor = .white
         self.navigationController?.navigationBar.barTintColor = .systemBlue
         
@@ -46,6 +44,58 @@ class SearchViewController: UIViewController {
         }
         movieVM.fetchMovies(url: url)
     }
+    
+    func dateModify(toMod: [String]) -> String {
+        if (toMod[1] == "01"){
+            return "January \(toMod[2]), \(toMod[0])"
+        }
+       else if (toMod[1] == "02"){
+            return "February \(toMod[2]), \(toMod[0])"
+        }
+
+       else if (toMod[1] == "03"){
+            return "March \(toMod[2]), \(toMod[0])"
+        }
+
+        else if (toMod[1] == "04"){
+            return "April \(toMod[2]), \(toMod[0])"
+        }
+
+       else if (toMod[1] == "05"){
+            return "May \(toMod[2]), \(toMod[0])"
+        }
+
+       else if (toMod[1] == "06"){
+            return "June \(toMod[2]), \(toMod[0])"
+        }
+
+       else if (toMod[1] == "07"){
+            return "July \(toMod[2]), \(toMod[0])"
+        }
+
+       else if (toMod[1] == "08"){
+            return "August \(toMod[2]), \(toMod[0])"
+        }
+
+       else if (toMod[1] == "09"){
+            return "September \(toMod[2]), \(toMod[0])"
+        }
+        
+       else if (toMod[1] == "10"){
+            return "October \(toMod[2]), \(toMod[0])"
+        }
+        
+        else if (toMod[1] == "11"){
+            return "November \(toMod[2]), \(toMod[0])"
+        }
+        
+        else if (toMod[1] == "12"){
+            return "December \(toMod[2]), \(toMod[0])"
+        }
+        else {
+            return ""
+        }
+    }
 }
 
 extension SearchViewController: UITableViewDelegate {
@@ -63,16 +113,17 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! SearchViewCell
+        let str = self.movieVM.movies[indexPath.row].release_date
+        let strArray = str?.components(separatedBy: "-") ?? [""]
+        let date = self.dateModify(toMod: strArray)
+        
         cell.titleLabel.text = self.movieVM.movies[indexPath.row].title
-        cell.releaseLabel.text = self.movieVM.movies[indexPath.row].release_date
-        cell.ratingLabel.text = "\(self.movieVM.movies[indexPath.row].popularity ?? 0)"
+        cell.releaseLabel.text = date
+        cell.ratingLabel.text = "\(self.movieVM.movies[indexPath.row].vote_average ?? 0)"
         return cell
     }
+    
+
+    
 }
 
-extension SearchViewController: UISearchBarDelegate {
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
-}

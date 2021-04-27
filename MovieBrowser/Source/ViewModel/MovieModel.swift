@@ -39,7 +39,7 @@ class MovieModel {
         }
     }
     
-    func image(for index: Int) -> UIImage {
-        return self.finalMovies[index].image ?? UIImage(imageLiteralResourceName: "placeholder")
-    }
+   // func image(for index: Int) -> UIImage {
+   //     return self.finalMovies[index].image ?? UIImage(imageLiteralResourceName: //"placeholder")
+   // }
 }
