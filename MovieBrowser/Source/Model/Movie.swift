@@ -32,8 +32,8 @@ class Movie {
         self.original_language      = movie.original_language
         self.title                  = movie.title
         self.backdrop_path          = movie.backdrop_path
-        
     }
+    
     
     init(){
         self.image                  = UIImage()
@@ -47,5 +47,4 @@ class Movie {
         self.title                  = ""
         self.backdrop_path          = ""
     }
-    
 }

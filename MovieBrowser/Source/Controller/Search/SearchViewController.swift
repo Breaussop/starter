@@ -20,23 +20,32 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         self.navigationItem.titleView?.tintColor = .white
         self.navigationController?.navigationBar.barTintColor = .systemBlue
         
     }
     
+    
+    
     @IBAction  func didTapButton(_ sender: Any){
+        let strArray = self.searchBar.text?.components(separatedBy: " ")
         setUpCollection(query: self.searchBar.text ?? "")
         
     }
     
+    func setupView() {
+        self.navigationItem.titleView?.tintColor = .white
+        self.navigationController?.navigationBar.barTintColor = .systemBlue
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        tableView.register(SearchViewCell.nib(), forCellReuseIdentifier: "cell")
+    }
     
     func setUpCollection(query: String) {
         let url = "https://api.themoviedb.org/3/search/movie?api_key=5885c445eab51c7004916b9c0313e2d3&language=en-US&query=\(query)&page=1&include_adult=true"
         
-        tableView.register(SearchViewCell.nib(), forCellReuseIdentifier: "cell")
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+      
         self.movieVM.bind {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
